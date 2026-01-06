@@ -9,7 +9,6 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Foto discrete</title>
-
 <style>
 @import url("https://fonts.googleapis.com/css?family=Montserrat&subset=latin-ext");
 *{margin:0;padding:0;box-sizing:border-box}
@@ -38,8 +37,8 @@ h1{font-size:3.5rem;margin-bottom:2rem;color:#ffff00;text-transform:uppercase;te
 .close-modal{float:right;font-size:30px;cursor:pointer;color:#fff;line-height:20px}
 </style>
 </head>
-
 <body>
+
 <div class="main">
 <div class="videobgbox">
 <video autoplay muted loop playsinline>
@@ -52,7 +51,7 @@ h1{font-size:3.5rem;margin-bottom:2rem;color:#ffff00;text-transform:uppercase;te
 <h1>Attenzione!</h1>
 <span class="texto-encuesta">
 Siamo un gruppo di madri single dai 30 ai 50 anni che cercano una relazione.
-Se sei maggiorenne, fai clic su ENTRA.
+Se sei maggiorenne, clicca su ENTRA.
 </span>
 <div class="btnbox">
 <a class="btn btn--primary next" href="#">Entra</a>
@@ -71,13 +70,15 @@ Ti piacciono le donne sopra i 30 anni?
 </div>
 
 <div class="step" id="s3">
-<h1>24 ore!</h1>
+<h1>24 Ore!</h1>
 <span class="texto-encuesta">
 Accetti di rispettare la privacy dei nostri membri?
 Non diffondere voci.
 </span>
 <div class="btnbox">
-<a class="btn btn--primary" href="https://aoarlv.trueelure.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&s1=234303&s2=2120439&s3=TheStronger">Accetto</a>
+<a class="btn btn--primary" href="https://aoarlv.trueelure.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&s1=234303&s2=2120439&s3=TheStronger">
+Accetto
+</a>
 </div>
 </div>
 </div>
@@ -100,33 +101,28 @@ Non diffondere voci.
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script>
 $(document).ready(function(){
-
-var steps=$('.step'), cur=0;
-
-$('.next').click(function(e){
-e.preventDefault(); $(steps[cur]).hide(); cur++;
-if(cur<steps.length){
-$(steps[cur]).fadeIn();
-$('#pbar').css('width',((cur+1)/steps.length)*100+'%');
-}
-});
-
-const leg={
-p:"<h2>Privacy</h2><p>I tuoi dati sono al sicuro con noi.</p>",
-c:"<h2>Termini</h2><p>Accedendo, confermi di avere più di 18 anni.</p>",
-k:"<h2>Cookie</h2><p>Questo sito utilizza cookie per migliorare l’esperienza.</p>"
-};
-
-$('.footer-legal a').click(function(e){
-e.preventDefault();
-$('#legalText').html(leg[$(this).data('type')]);
-$('#legalModal').fadeIn();
-});
-
-$('.close-modal, .modal-legal').click(function(){$('#legalModal').fadeOut();});
-$('.modal-content').click(function(e){e.stopPropagation();});
-
+    var steps=$('.step'), cur=0;
+    $('.next').click(function(e){
+        e.preventDefault(); $(steps[cur]).hide(); cur++;
+        if(cur<steps.length){
+            $(steps[cur]).fadeIn();
+            $('#pbar').css('width',((cur+1)/steps.length)*100+'%');
+        }
+    });
+    const leg={
+        p:"<h2>Privacy</h2><p>I tuoi dati sono al sicuro con noi.</p>",
+        c:"<h2>Termini</h2><p>Entrando, confermi di avere più di 18 anni.</p>",
+        k:"<h2>Cookie</h2><p>Questo sito utilizza cookie per migliorare l’esperienza.</p>"
+    };
+    $('.footer-legal a').click(function(e){
+        e.preventDefault();
+        $('#legalText').html(leg[$(this).data('type')]);
+        $('#legalModal').fadeIn();
+    });
+    $('.close-modal, .modal-legal').click(function(){$('#legalModal').fadeOut();});
+    $('.modal-content').click(function(e){e.stopPropagation();});
 });
 </script>
+
 </body>
 </html>
